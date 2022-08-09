@@ -9,12 +9,14 @@ const ref = {
   boxes: document.querySelector('#boxes')
 }
 
+const size = 30
+
 function createBoxes(amount) {
   const addEls = []
   for (let i = 0; i < amount; i++){
     const div = document.createElement('div')
-    div.style.height = `${30 + 10 * i}px`
- 		div.style.width = `${30 + 10 * i}px`
+    div.style.height = `${size + 10 * i}px`
+ 		div.style.width = `${size + 10 * i}px`
  		div.style.background = getRandomHexColor()
  		addEls.push(div)
   }

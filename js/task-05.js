@@ -4,9 +4,9 @@ const output = document.querySelector('#name-output')
 input.addEventListener('input', onInputChange)
 
 function onInputChange(event) {
-    output.textContent = event.currentTarget.value
+    output.textContent = event.target.value
 
-    if (event.currentTarget.value === '') {
+    if (event.target.value === '') {
 		output.textContent = 'Anonymous'
 	}
 }
