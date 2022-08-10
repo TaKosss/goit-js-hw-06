@@ -9,28 +9,28 @@ const ref = {
   boxes: document.querySelector('#boxes')
 }
 
-const size = 30
+let size = 30
 
 function createBoxes(amount) {
   const addEls = []
   for (let i = 0; i < amount; i++){
+    size += 10
     const div = document.createElement('div')
-    div.style.height = `${size + 10 * i}px`
- 		div.style.width = `${size + 10 * i}px`
+    div.style.height = `${size}px`
+ 		div.style.width = `${size}px`
  		div.style.background = getRandomHexColor()
  		addEls.push(div)
   }
-
-  return addEls
+  ref.boxes.append(...addEls)
 }
 
 const destroyBoxes = () => {
+  size = 30
   boxes.innerHTML = ''
 }
 
- ref.createBtn.addEventListener('click', () => {
-	let boxesToAdd = createBoxes(ref.input.value)
- 	ref.boxes.append(...boxesToAdd)
+ref.createBtn.addEventListener('click', () => {
+   createBoxes(+ref.input.value)
  })
 
   ref.destroyBtn.addEventListener('click', () => {
